@@ -2,8 +2,6 @@ import * as ts from "typescript";
 import * as dom from "dts-dom";
 import { getAllArrItems, isSimpleType, getType } from "../compiler-utils";
 import { equalObjectLiteralExpression } from "../equal";
-import genObjDTS from "./genObjDts";
-import * as dtsDB from "../dts-db";
 import { safeGenObjDTS } from ".";
 
 export default function genArrDTS(
@@ -22,7 +20,10 @@ export default function genArrDTS(
     }
   });
 
-  const valueType = dom.create.union([...types] as dom.Type[]);
+  const valueType =
+    types.size === 1
+      ? [...types][0]
+      : dom.create.union([...types] as dom.Type[]);
 
   return dom.create.array(valueType);
 }

@@ -16,7 +16,6 @@ import {
   equalArrayLiteralExpression
 } from "../equal";
 import genArrDTS from "./genArrDTS";
-import * as dtsDB from "../dts-db";
 import { safeGenObjDTS } from ".";
 
 function getLastChildCommnet(node: ts.Node) {
@@ -59,7 +58,7 @@ export default function genObjDTS(
 
       // 构建属性类型
       const keyDTS = dom.create.property(
-        getName(nameNode),
+        getName(nameNode, false),
         equalArrayLiteralExpression(valueNode)
           ? genArrDTS(valueNode, typeName)
           : (typeName as dom.Type)

@@ -1,21 +1,45 @@
 export default `
-const person = { // test
-  name: 'wly', // name
-  age: 18, // age
-  love: [1, 2, 3, 'name', {aa: true}], // love
-  // child1
-  child: { // child2
-    name: 'wx' // childName
-  }
-}
-
-const person = { // test
-  age1: 18, // age
-  name: 'wly', // name
-  love: [1, 2, 3, 'name', {aa: true}], // love
-  // child1
-  child: { // child2
-    name: 'wx' // childName
-  }
+const RootName = {
+  "channelName": "广点通",
+  "channelTag": "第三方adx标示",
+  "adPos": [
+      {
+          "games": {
+              "showName": "游戏",
+              "pathName": "firstCategory",
+              "value": {
+                  "shoot": {
+                      "showName": "射击",
+                      "pathName": "secondeCategory",
+                      "value": {
+                          "stimulate": {
+                              "showName": "刺激战场",
+                              "pathName": "media",
+                              "value": {
+                                  "113232": {
+                                      "pathName": "slotId",
+                                      "showName": "底部小图"
+                                  },
+                                  "123232": {
+                                      "pathName": "slotId",
+                                      "showName": "中部小图"
+                                  }
+                              }
+                          },
+                          "red": {
+                              "showName": "红色战场",
+                              "pathName": "media",
+                              "value": {
+                                  "123232": {
+                                      "showName": "中部小图"
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  ]
 }
 `;
