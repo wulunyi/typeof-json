@@ -4,6 +4,7 @@ import { getAllArrItems, isSimpleType, getType } from "../compiler-utils";
 import { equalObjectLiteralExpression } from "../equal";
 import genObjDTS from "./genObjDts";
 import * as dtsDB from "../dts-db";
+import { safeGenObjDTS } from ".";
 
 export default function genArrDTS(
   node: ts.Node,
@@ -17,8 +18,7 @@ export default function genArrDTS(
     if (isSimpleType(itemType)) {
       types.add(itemType);
     } else if (equalObjectLiteralExpression(itemNode)) {
-      dtsDB.add(name, genObjDTS(itemNode, name));
-      types.add(name);
+      types.add(safeGenObjDTS(itemNode, name));
     }
   });
 

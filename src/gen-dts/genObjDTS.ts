@@ -17,6 +17,7 @@ import {
 } from "../equal";
 import genArrDTS from "./genArrDTS";
 import * as dtsDB from "../dts-db";
+import { safeGenObjDTS } from ".";
 
 function getLastChildCommnet(node: ts.Node) {
   const closeBraceTokenNode = filterNode(
@@ -30,7 +31,7 @@ function getLastChildCommnet(node: ts.Node) {
 export default function genObjDTS(
   node: ts.Node,
   name: string
-): dom.TopLevelDeclaration {
+): dom.InterfaceDeclaration {
   const dts = dom.create.interface(name);
 
   // 遍历所有属性进行处理
@@ -66,7 +67,7 @@ export default function genObjDTS(
 
       // 如果值是对象表达式则创建一个 interface
       if (equalObjectLiteralExpression(valueNode)) {
-        dtsDB.add(typeName, genObjDTS(valueNode, typeName));
+        safeGenObjDTS(valueNode, typeName);
       }
 
       // 添加注释

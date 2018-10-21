@@ -2,7 +2,7 @@ import * as dom from "dts-dom";
 
 const DTS_MAP = new Map();
 
-export function add(name: string, dts: dom.TopLevelDeclaration) {
+export function add(name: string, dts: dom.InterfaceDeclaration) {
   DTS_MAP.set(name, dts);
 }
 

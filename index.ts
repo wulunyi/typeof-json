@@ -7,6 +7,8 @@ import genObjDTS from "./src/gen-dts/genObjDts";
 import teststr from "./src/teststr";
 import { equalObjectLiteralExpression } from "./src/equal";
 import * as dtsDB from "./src/dts-db";
+import isSameDTS from "./src/utils/isSameDTS";
+import { safeGenObjDTS } from "./src/gen-dts";
 
 const VariableDeclaration = tsquery(
   tsquery.ast(teststr),
@@ -19,7 +21,8 @@ VariableDeclaration.forEach(node => {
 
   if (equalObjectLiteralExpression(valueNode)) {
     const typeName = nameNode.getText();
-    dtsDB.add(typeName, genObjDTS(valueNode, typeName));
+
+    safeGenObjDTS(valueNode, typeName);
   }
 });
 
