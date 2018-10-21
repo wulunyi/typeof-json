@@ -4,6 +4,8 @@ import getExpression from "./getExpression";
 import getName from "./getName";
 import isSimpleType from "./isSimpleType";
 import getAllProperty from "./getAllProperty";
+import getAllArrItems from "./getAllArrItem";
+import getType from "./getType";
 
 export {
   getIdentifier,
@@ -11,5 +13,7 @@ export {
   getExpression,
   getName,
   isSimpleType,
-  getAllProperty
+  getAllProperty,
+  getAllArrItems,
+  getType
 };

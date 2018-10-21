@@ -1,45 +1,26 @@
 import * as ts from "typescript";
 import * as dom from "dts-dom";
 import { tsquery } from "@phenomnomnominal/tsquery";
-import getComments from "./src/utils/get-comments";
-import {
-  getIdentifier,
-  getExpression,
-  getName,
-  filterNode,
-  getAllProperty
-} from "./src/compiler-utils";
-import { createSourceFile } from "./src/compiler/sourcefile";
-
-import teststr from "./src/teststr";
-import getType from "./src/utils/get-type";
-import isSimpleType from "./src/compiler-utils/isSimpleType";
-import { genSimpleDTS } from "./src/gen-dts";
+import { getIdentifier, getExpression, getType } from "./src/compiler-utils";
 import genObjDTS from "./src/gen-dts/genObjDts";
 
-const { typeChecker, sourceFile, program } = createSourceFile(
-  teststr,
-  ts.ScriptTarget.Latest,
-  ts.ScriptKind.JS
+import teststr from "./src/teststr";
+import { equalObjectLiteralExpression } from "./src/equal";
+import * as dtsDB from "./src/dts-db";
+
+const VariableDeclaration = tsquery(
+  tsquery.ast(teststr),
+  "VariableDeclaration"
 );
 
-const VariableDeclaration = tsquery(sourceFile, "VariableDeclaration");
-
-let InterfaceList: dom.TopLevelDeclaration[] = [];
-
 VariableDeclaration.forEach(node => {
-  const identifier = getIdentifier(node);
-  const expression = getExpression(node);
-  const typeSrt = getType(identifier, typeChecker);
+  const nameNode = getIdentifier(node);
+  const valueNode = getExpression(node);
 
-  // 对象时
-  if (expression.kind === ts.SyntaxKind.ObjectLiteralExpression) {
-    InterfaceList = InterfaceList.concat(
-      genObjDTS(expression, typeChecker, getName(identifier))
-    );
-  } else {
-    InterfaceList.push(genSimpleDTS(identifier, typeSrt));
+  if (equalObjectLiteralExpression(valueNode)) {
+    const typeName = nameNode.getText();
+    dtsDB.add(typeName, genObjDTS(valueNode, typeName));
   }
 });
 
-InterfaceList.forEach(inter => console.log(dom.emit(inter, { rootFlags: 1 })));
+console.log(dtsDB.emit());

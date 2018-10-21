@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 import { DefinedNodeType } from "../types/compiler-types";
-import getType from "../utils/get-type";
+import { getType } from "../compiler-utils";
 import getComments from "../utils/get-comments";
 
 export default function compiler(
@@ -32,7 +32,7 @@ function parseIdentifier(
   const { pre, end } = getComments(node.getFullText());
 
   definedNode.name = node.getText();
-  definedNode.type = getType(node, typeChecker);
+  definedNode.type = getType(node);
   definedNode.preCommentLine = pre;
   definedNode.endCommentLine = end;
 }

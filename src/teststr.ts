@@ -1,18 +1,11 @@
 export default `
-const a = 'b'
-const b = true
-const RootType = { // zs1
-  // zs2
-  name: 'wly', // zs3
-  /**
-   * zs4
-   * aaa
-   */
-  age: 18,
-  aa: true,
-  bb: undefined,
-  cc: null,
-  love: ['wly', {word: 'hello'}],
-  word: {enen: 'hello'}
+const person = { // test
+  name: 'wly', // name
+  age: 18, // age
+  love: [1, 2, 3, 'name', {aa: true}], // love
+  // child1
+  child: { // child2
+    name: 'wx' // childName
+  }
 }
 `;

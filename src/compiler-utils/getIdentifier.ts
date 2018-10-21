@@ -7,5 +7,9 @@ import filterNode from "./filterNode";
  * @returns
  */
 export default function getIdentifier(node: ts.Node): ts.Node {
-  return filterNode(node, ts.SyntaxKind.Identifier)[0];
+  return (
+    filterNode(node, ts.SyntaxKind.Identifier)[0] ||
+    filterNode(node, ts.SyntaxKind.StringLiteral)[0] ||
+    filterNode(node, ts.SyntaxKind.NumericLiteral)[0]
+  );
 }
