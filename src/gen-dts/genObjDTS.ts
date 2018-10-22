@@ -52,9 +52,7 @@ export default function genObjDTS(
       }
 
       // 计算类型名称
-      typeName = isSimpleType(typeName)
-        ? typeName
-        : camelcase(getName(nameNode), { pascalCase: true });
+      typeName = isSimpleType(typeName) ? typeName : getName(nameNode);
 
       // 构建属性类型
       const keyDTS = dom.create.property(

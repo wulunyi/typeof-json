@@ -1,4 +1,7 @@
-import { CommentLinesType } from "../types/compiler-types";
+interface CommentLinesType {
+  pre: string[];
+  end: string[];
+}
 
 /**
  * Determines whether start new line is

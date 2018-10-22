@@ -210,9 +210,13 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-lodash@^4.17.10, lodash@^4.17.11:
+lodash@^4.17.10:
   version "4.17.11"
   resolved "http://r.npm.sankuai.com/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+
+lodash@^4.17.11:
+  version "4.17.11"
+  resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
 make-error@^1.1.1:
   version "1.3.5"
