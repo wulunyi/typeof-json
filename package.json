@@ -1,6 +1,6 @@
 {
   "name": "@wmfe/josn2interface",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "./lib/index.js",
   "types": "./types/index.d.ts",
   "license": "MIT",
