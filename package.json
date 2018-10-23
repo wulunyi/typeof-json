@@ -1,11 +1,13 @@
 {
   "name": "@wmfe/josn2interface",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
   "license": "MIT",
   "scripts": {
     "lint": "tslint --project ./",
-    "fix": "tslint -P ./ --fix"
+    "fix": "tslint -P ./ --fix",
+    "build": "tsc -P ./"
   },
   "dependencies": {
     "@babel/parser": "^7.1.3",

@@ -1,4 +1,4 @@
-export default `{ // 广点通
+module.exports = `{ // 广点通
   "channelName": "广点通", // 渠道名
   "channelTag": "第三方adx标示", // 渠道标签
   "adPos": [
