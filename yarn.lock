@@ -113,9 +113,11 @@
   dependencies:
     "@babel/types" "^7.0.0-beta.54"
 
-"@types/camelcase@^4.1.0":
-  version "4.1.0"
-  resolved "http://registry.npm.taobao.org/@types/camelcase/download/@types/camelcase-4.1.0.tgz#e054f7986f31658d49936261b5cd4588ef29d1ee"
+"@types/change-case@^2.3.1":
+  version "2.3.1"
+  resolved "http://r.npm.sankuai.com/@types/change-case/download/@types/change-case-2.3.1.tgz#dbaf4efb63ad8586ab8819179a790904ccb6a837"
+  dependencies:
+    change-case "*"
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -184,9 +186,12 @@ byots@^2.9.0-dev.20180411.1.10:
   version "2.9.0-dev.20180411.1.10"
   resolved "http://r.npm.sankuai.com/byots/download/byots-2.9.0-dev.20180411.1.10.tgz#d9876e88d14bca34ebc817b87cfb0b61ef7dd827"
 
-camelcase@^5.0.0:
-  version "5.0.0"
-  resolved "http://registry.npm.taobao.org/camelcase/download/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
+camel-case@^3.0.0:
+  version "3.0.0"
+  resolved "http://r.npm.sankuai.com/camel-case/download/camel-case-3.0.0.tgz#ca3c3688a4e9cf3a4cda777dc4dcbc713249cf73"
+  dependencies:
+    no-case "^2.2.0"
+    upper-case "^1.1.1"
 
 chalk@^1.1.3:
   version "1.1.3"
@@ -206,6 +211,29 @@ chalk@^2.0.0, chalk@^2.3.0:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
+change-case@*, change-case@^3.0.2:
+  version "3.0.2"
+  resolved "http://r.npm.sankuai.com/change-case/download/change-case-3.0.2.tgz#fd48746cce02f03f0a672577d1d3a8dc2eceb037"
+  dependencies:
+    camel-case "^3.0.0"
+    constant-case "^2.0.0"
+    dot-case "^2.1.0"
+    header-case "^1.0.0"
+    is-lower-case "^1.1.0"
+    is-upper-case "^1.1.0"
+    lower-case "^1.1.1"
+    lower-case-first "^1.0.0"
+    no-case "^2.3.2"
+    param-case "^2.1.0"
+    pascal-case "^2.0.0"
+    path-case "^2.1.0"
+    sentence-case "^2.1.0"
+    snake-case "^2.1.0"
+    swap-case "^1.1.0"
+    title-case "^2.1.0"
+    upper-case "^1.1.1"
+    upper-case-first "^1.1.0"
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "http://r.npm.sankuai.com/color-convert/download/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -223,6 +251,13 @@ commander@^2.12.1:
 concat-map@0.0.1:
   version "0.0.1"
   resolved "http://r.npm.sankuai.com/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
+
+constant-case@^2.0.0:
+  version "2.0.0"
+  resolved "http://r.npm.sankuai.com/constant-case/download/constant-case-2.0.0.tgz#4175764d389d3fa9c8ecd29186ed6005243b6a46"
+  dependencies:
+    snake-case "^2.1.0"
+    upper-case "^1.1.1"
 
 debug@^3.1.0:
   version "3.2.6"
@@ -244,6 +279,12 @@ doctrine@0.7.2:
   dependencies:
     esutils "^1.1.6"
     isarray "0.0.1"
+
+dot-case@^2.1.0:
+  version "2.1.1"
+  resolved "http://r.npm.sankuai.com/dot-case/download/dot-case-2.1.1.tgz#34dcf37f50a8e93c2b3bca8bb7fb9155c7da3bee"
+  dependencies:
+    no-case "^2.2.0"
 
 dts-dom@^3.1.0:
   version "3.1.0"
@@ -308,6 +349,13 @@ has-flag@^3.0.0:
   version "3.0.0"
   resolved "http://r.npm.sankuai.com/has-flag/download/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
 
+header-case@^1.0.0:
+  version "1.0.1"
+  resolved "http://r.npm.sankuai.com/header-case/download/header-case-1.0.1.tgz#9535973197c144b09613cd65d317ef19963bd02d"
+  dependencies:
+    no-case "^2.2.0"
+    upper-case "^1.1.3"
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "http://r.npm.sankuai.com/inflight/download/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
@@ -322,6 +370,18 @@ inherits@2:
 inversify@^4.10.0:
   version "4.14.0"
   resolved "http://r.npm.sankuai.com/inversify/download/inversify-4.14.0.tgz#393c1f86ee92aef0592eb0e493623b9d88dfb376"
+
+is-lower-case@^1.1.0:
+  version "1.1.3"
+  resolved "http://r.npm.sankuai.com/is-lower-case/download/is-lower-case-1.1.3.tgz#7e147be4768dc466db3bfb21cc60b31e6ad69393"
+  dependencies:
+    lower-case "^1.1.0"
+
+is-upper-case@^1.1.0:
+  version "1.1.2"
+  resolved "http://r.npm.sankuai.com/is-upper-case/download/is-upper-case-1.1.2.tgz#8d0b1fa7e7933a1e58483600ec7d9661cbaf756f"
+  dependencies:
+    upper-case "^1.1.0"
 
 isarray@0.0.1:
   version "0.0.1"
@@ -356,6 +416,16 @@ lodash@^4.17.10, lodash@^4.17.11:
   version "4.17.11"
   resolved "http://r.npm.sankuai.com/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
+lower-case-first@^1.0.0:
+  version "1.0.2"
+  resolved "http://r.npm.sankuai.com/lower-case-first/download/lower-case-first-1.0.2.tgz#e5da7c26f29a7073be02d52bac9980e5922adfa1"
+  dependencies:
+    lower-case "^1.1.2"
+
+lower-case@^1.1.0, lower-case@^1.1.1, lower-case@^1.1.2:
+  version "1.1.4"
+  resolved "http://r.npm.sankuai.com/lower-case/download/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
+
 make-error@^1.1.1:
   version "1.3.5"
   resolved "http://r.npm.sankuai.com/make-error/download/make-error-1.3.5.tgz#efe4e81f6db28cadd605c70f29c831b58ef776c8"
@@ -384,11 +454,36 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "http://r.npm.sankuai.com/ms/download/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
+no-case@^2.2.0, no-case@^2.3.2:
+  version "2.3.2"
+  resolved "http://r.npm.sankuai.com/no-case/download/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
+  dependencies:
+    lower-case "^1.1.1"
+
 once@^1.3.0:
   version "1.4.0"
   resolved "http://r.npm.sankuai.com/once/download/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   dependencies:
     wrappy "1"
+
+param-case@^2.1.0:
+  version "2.1.1"
+  resolved "http://r.npm.sankuai.com/param-case/download/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
+  dependencies:
+    no-case "^2.2.0"
+
+pascal-case@^2.0.0:
+  version "2.0.1"
+  resolved "http://r.npm.sankuai.com/pascal-case/download/pascal-case-2.0.1.tgz#2d578d3455f660da65eca18ef95b4e0de912761e"
+  dependencies:
+    camel-case "^3.0.0"
+    upper-case-first "^1.1.0"
+
+path-case@^2.1.0:
+  version "2.1.1"
+  resolved "http://r.npm.sankuai.com/path-case/download/path-case-2.1.1.tgz#94b8037c372d3fe2906e465bb45e25d226e8eea5"
+  dependencies:
+    no-case "^2.2.0"
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
@@ -411,6 +506,19 @@ resolve@^1.3.2:
 semver@^5.3.0:
   version "5.6.0"
   resolved "http://r.npm.sankuai.com/semver/download/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
+
+sentence-case@^2.1.0:
+  version "2.1.1"
+  resolved "http://r.npm.sankuai.com/sentence-case/download/sentence-case-2.1.1.tgz#1f6e2dda39c168bf92d13f86d4a918933f667ed4"
+  dependencies:
+    no-case "^2.2.0"
+    upper-case-first "^1.1.2"
+
+snake-case@^2.1.0:
+  version "2.1.0"
+  resolved "http://r.npm.sankuai.com/snake-case/download/snake-case-2.1.0.tgz#41bdb1b73f30ec66a04d4e2cad1b76387d4d6d9f"
+  dependencies:
+    no-case "^2.2.0"
 
 source-map-support@^0.5.6:
   version "0.5.9"
@@ -450,6 +558,20 @@ supports-color@^5.3.0:
   resolved "http://r.npm.sankuai.com/supports-color/download/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
   dependencies:
     has-flag "^3.0.0"
+
+swap-case@^1.1.0:
+  version "1.1.2"
+  resolved "http://r.npm.sankuai.com/swap-case/download/swap-case-1.1.2.tgz#c39203a4587385fad3c850a0bd1bcafa081974e3"
+  dependencies:
+    lower-case "^1.1.1"
+    upper-case "^1.1.1"
+
+title-case@^2.1.0:
+  version "2.1.1"
+  resolved "http://r.npm.sankuai.com/title-case/download/title-case-2.1.1.tgz#3e127216da58d2bc5becf137ab91dae3a7cd8faa"
+  dependencies:
+    no-case "^2.2.0"
+    upper-case "^1.0.3"
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
@@ -558,6 +680,16 @@ tsutils@^3.0.0:
 typescript@^3.1.3:
   version "3.1.3"
   resolved "http://r.npm.sankuai.com/typescript/download/typescript-3.1.3.tgz#01b70247a6d3c2467f70c45795ef5ea18ce191d5"
+
+upper-case-first@^1.1.0, upper-case-first@^1.1.2:
+  version "1.1.2"
+  resolved "http://r.npm.sankuai.com/upper-case-first/download/upper-case-first-1.1.2.tgz#5d79bedcff14419518fd2edb0a0507c9b6859115"
+  dependencies:
+    upper-case "^1.1.1"
+
+upper-case@^1.0.3, upper-case@^1.1.0, upper-case@^1.1.1, upper-case@^1.1.3:
+  version "1.1.3"
+  resolved "http://r.npm.sankuai.com/upper-case/download/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
 
 wrappy@1:
   version "1.0.2"

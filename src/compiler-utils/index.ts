@@ -14,6 +14,6 @@ export {
   getName,
   isSimpleType,
   getAllProperty,
-  getAllArrItems,
+  getAllArrItem,
   getType,
 };

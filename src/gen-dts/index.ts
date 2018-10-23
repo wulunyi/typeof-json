@@ -3,4 +3,4 @@ import genArrDTS from './genArrDTS';
 import genObjDts from './genObjDts';
 import safeGenObjDTS from './safeGenObjDTS';
 
-export { genSimpleDTS, genArrDTS, genObjDTS, safeGenObjDTS };
+export { genSimpleDTS, genArrDTS, genObjDts, safeGenObjDTS };

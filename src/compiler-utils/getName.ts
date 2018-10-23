@@ -1,5 +1,6 @@
 import * as ts from 'typescript';
-import camelcase from 'camelcase';
+import * as changeCase from 'change-case';
+
 import { allAreNumChar, trimQuotes } from '../utils';
 
 export default function getName(
@@ -11,6 +12,6 @@ export default function getName(
   return isInterfaceName
     ? allAreNumChar(name)
       ? `_${name}`
-      : camelcase(name, { pascalCase: true })
+      : changeCase.pascalCase(name)
     : name;
 }

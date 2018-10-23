@@ -1,6 +1,6 @@
 import * as ts from 'typescript';
 import * as dom from 'dts-dom';
-import { getAllArrItems, isSimpleType, getType } from '../compiler-utils';
+import { getAllArrItem, isSimpleType, getType } from '../compiler-utils';
 import { equalObjectLiteralExpression } from '../equal';
 import { safeGenObjDTS } from '.';
 
@@ -10,7 +10,7 @@ export default function genArrDTS(
 ): dom.ArrayTypeReference {
   const types = new Set();
 
-  getAllArrItems(node).forEach((itemNode: ts.Node) => {
+  getAllArrItem(node).forEach((itemNode: ts.Node) => {
     const itemType = getType(itemNode);
 
     if (isSimpleType(itemType)) {

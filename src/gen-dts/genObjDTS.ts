@@ -1,6 +1,5 @@
 import * as ts from 'typescript';
 import * as dom from 'dts-dom';
-import camelcase from 'camelcase';
 import {
   getAllProperty,
   getIdentifier,
