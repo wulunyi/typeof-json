@@ -1,31 +1,31 @@
-import * as ts from "typescript";
+import * as ts from 'typescript';
 
 export default function getType(node: ts.Node): string {
   let result!: string;
 
   switch (node.kind) {
     case ts.SyntaxKind.StringLiteral:
-      result = "string";
+      result = 'string';
       break;
     case ts.SyntaxKind.NumericLiteral:
-      result = "number";
+      result = 'number';
       break;
     case ts.SyntaxKind.NullKeyword:
-      result = "null";
+      result = 'null';
       break;
     case ts.SyntaxKind.Identifier:
-      result = node.getText() === "undefined" ? "undefined" : "any";
+      result = node.getText() === 'undefined' ? 'undefined' : 'any';
       break;
     case ts.SyntaxKind.TrueKeyword:
     case ts.SyntaxKind.FalseKeyword:
-      result = "boolean";
+      result = 'boolean';
       break;
     case ts.SyntaxKind.ArrayLiteralExpression:
     case ts.SyntaxKind.ObjectLiteralExpression:
-      result = "object";
+      result = 'object';
       break;
     default:
-      result = "any";
+      result = 'any';
       break;
   }
 

@@ -1,4 +1,4 @@
-import { render } from "./src";
-import json from "./teststr";
+import { render } from './src';
+import teststr from './teststr';
 
-console.log(render(json, "rootName"));
+console.log(render(teststr, 'rootName'));

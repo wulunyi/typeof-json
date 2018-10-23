@@ -1,6 +1,6 @@
-import * as ts from "typescript";
-import * as dom from "dts-dom";
-import camelcase from "camelcase";
+import * as ts from 'typescript';
+import * as dom from 'dts-dom';
+import camelcase from 'camelcase';
 import {
   getAllProperty,
   getIdentifier,
@@ -8,20 +8,20 @@ import {
   filterNode,
   isSimpleType,
   getName,
-  getType
-} from "../compiler-utils";
-import getComments from "../utils/get-comments";
+  getType,
+} from '../compiler-utils';
+import getComments from '../utils/get-comments';
 import {
   equalObjectLiteralExpression,
-  equalArrayLiteralExpression
-} from "../equal";
-import genArrDTS from "./genArrDTS";
-import { safeGenObjDTS } from ".";
+  equalArrayLiteralExpression,
+} from '../equal';
+import genArrDTS from './genArrDTS';
+import { safeGenObjDTS } from '.';
 
 function getLastChildCommnet(node: ts.Node) {
   const closeBraceTokenNode = filterNode(
     node,
-    ts.SyntaxKind.CloseBraceToken
+    ts.SyntaxKind.CloseBraceToken,
   )[0];
 
   return getComments(closeBraceTokenNode.getFullText()).pre;
@@ -29,7 +29,7 @@ function getLastChildCommnet(node: ts.Node) {
 
 export default function genObjDTS(
   node: ts.Node,
-  name: string
+  name: string,
 ): dom.InterfaceDeclaration {
   const dts = dom.create.interface(name);
 
@@ -43,12 +43,12 @@ export default function genObjDTS(
 
       const jsDocComment = filterNode(curNode, ts.SyntaxKind.JSDocComment).map(
         // @ts-ignore
-        i => i.comment
+        i => i.comment,
       );
 
       // 如果出现在第一个元素的前置注释中表示为整个对象的注释
       if (index === 0 && pre.length > 0) {
-        dts.jsDocComment = pre.join("\n");
+        dts.jsDocComment = pre.join('\n');
       }
 
       // 计算类型名称
@@ -59,7 +59,7 @@ export default function genObjDTS(
         getName(nameNode, false),
         equalArrayLiteralExpression(valueNode)
           ? genArrDTS(valueNode, typeName)
-          : (typeName as dom.Type)
+          : (typeName as dom.Type),
       );
 
       // 如果值是对象表达式则创建一个 interface
@@ -71,14 +71,14 @@ export default function genObjDTS(
       const comment = preComment.concat(jsDocComment, end);
 
       if (comment.length > 0) {
-        keyDTS.jsDocComment = comment.join("\n");
+        keyDTS.jsDocComment = comment.join('\n');
       }
 
       dts.members.unshift(keyDTS);
 
       return pre;
     },
-    getLastChildCommnet(node)
+    getLastChildCommnet(node),
   );
 
   return dts;

@@ -1,4 +1,4 @@
-import * as ts from "typescript";
+import * as ts from 'typescript';
 
 export function equalStringLiteral(node: ts.Node) {
   return node.kind === ts.SyntaxKind.StringLiteral;

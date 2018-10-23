@@ -27,11 +27,11 @@ function getAllCommentLine(str: string): string[] {
   }
 
   return matchAll
-    .map(i => {
+    .map((i: string) => {
       const match = i.match(commentLineReg);
 
       if (match === null) {
-        return "";
+        return '';
       }
 
       return match[1].trim();
@@ -45,12 +45,12 @@ export default function getComments(str: string): CommentLinesType {
   if (isStartNewLine(str)) {
     return {
       pre: [],
-      end: allLineComments
+      end: allLineComments,
     };
   }
 
   return {
     pre: allLineComments.slice(0, 1),
-    end: allLineComments.slice(1)
+    end: allLineComments.slice(1),
   };
 }

@@ -1,4 +1,4 @@
-import * as dom from "dts-dom";
+import * as dom from 'dts-dom';
 
 const DTS_MAP = new Map();
 
@@ -19,5 +19,5 @@ export function clear() {
 }
 
 export function emit() {
-  return [...DTS_MAP].map(dts => dom.emit(dts[1], { rootFlags: 1 })).join("\n");
+  return [...DTS_MAP].map(dts => dom.emit(dts[1], { rootFlags: 1 })).join('\n');
 }

@@ -1,4 +1,4 @@
-import * as ts from "typescript";
+import * as ts from 'typescript';
 
 /**
  * Gets identifier 获取节点下第一个 identifier
