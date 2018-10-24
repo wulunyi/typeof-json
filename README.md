@@ -5,7 +5,7 @@ Convert json string to typescript interface
 ## use
 
 ```typescript
-import { render } from '@wmfe/josn2interface';
+import { render } from 'typeof-json';
 
 console.log(
   render(
