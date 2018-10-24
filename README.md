@@ -1,6 +1,6 @@
-// let a = dom.create.property("name", dom.type.string);
-// let age = dom.create.property("age", dom.type.number);
-// let type = dom.create.objectType([a, age]);
-// let typeBase = dom.create.alias("typeBase", type);
-// console.log(dom.emit(typeBase));
-// result.push(dom.create.alias(name, dom.create.array(valueType)));
+## TodoList
+
+- [ ] 同名合并
+- [ ] 结构合并
+- [ ] 自定义命名规则
+- [ ] 是否生成注释

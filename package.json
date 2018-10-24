@@ -1,5 +1,5 @@
 {
-  "name": "@wmfe/josn2interface",
+  "name": "typeof-json",
   "version": "1.0.3",
   "main": "./lib/index.js",
   "types": "./types/index.d.ts",
