@@ -8,17 +8,19 @@ Convert json string to typescript interface
 import { render } from '@wmfe/josn2interface';
 
 console.log(
-  render(`
-{
-  name: 'lili', // name
-  /** age */
-  age: 18,
-  love: ['ball'],
-  test: {
-    hello: 'world'
-  }
-}
-`),
+  render(
+    `
+    {
+      name: 'lili', // name
+      /** age */
+      age: 18,
+      love: ['ball'],
+      test: {
+        hello: 'world'
+      }
+    }`,
+    'RootType',
+  ),
 );
 ```
 
