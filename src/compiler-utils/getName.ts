@@ -1,16 +1,17 @@
-import * as ts from "typescript";
-import camelcase from "camelcase";
-import { allAreNumChar, trimQuotes } from "../utils";
+import * as ts from 'typescript';
+import * as changeCase from 'change-case';
+
+import { allAreNumChar, trimQuotes } from '../utils';
 
 export default function getName(
   node: ts.Node,
-  isInterfaceName: boolean = true
+  isInterfaceName: boolean = true,
 ): string {
   const name = trimQuotes(node.getText());
 
   return isInterfaceName
     ? allAreNumChar(name)
       ? `_${name}`
-      : camelcase(name, { pascalCase: true })
+      : changeCase.pascalCase(name)
     : name;
 }

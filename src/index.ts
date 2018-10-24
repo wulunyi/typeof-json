@@ -1,3 +1,3 @@
-import render from "./render/render";
+import render from './render/render';
 
 export { render };

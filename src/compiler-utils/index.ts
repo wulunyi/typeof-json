@@ -1,11 +1,11 @@
-import getIdentifier from "./getIdentifier";
-import filterNode from "./filterNode";
-import getExpression from "./getExpression";
-import getName from "./getName";
-import isSimpleType from "./isSimpleType";
-import getAllProperty from "./getAllProperty";
-import getAllArrItems from "./getAllArrItem";
-import getType from "./getType";
+import getIdentifier from './getIdentifier';
+import filterNode from './filterNode';
+import getExpression from './getExpression';
+import getName from './getName';
+import isSimpleType from './isSimpleType';
+import getAllProperty from './getAllProperty';
+import getAllArrItem from './getAllArrItem';
+import getType from './getType';
 
 export {
   getIdentifier,
@@ -14,6 +14,6 @@ export {
   getName,
   isSimpleType,
   getAllProperty,
-  getAllArrItems,
-  getType
+  getAllArrItem,
+  getType,
 };

@@ -1,4 +1,4 @@
-import * as ts from "typescript";
+import * as ts from 'typescript';
 /**
  * Filters node 筛选节点下的子节点
  * @param node 节点

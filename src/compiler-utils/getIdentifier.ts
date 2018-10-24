@@ -1,5 +1,5 @@
-import * as ts from "typescript";
-import filterNode from "./filterNode";
+import * as ts from 'typescript';
+import filterNode from './filterNode';
 
 /**
  * Gets identifier 获取节点下第一个 identifier
