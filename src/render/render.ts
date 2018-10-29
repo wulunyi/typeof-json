@@ -1,22 +1,26 @@
-import { tsquery } from '@phenomnomnominal/tsquery';
 import * as ts from 'typescript';
-import { getIdentifier, getExpression, getName } from '../compiler-utils';
+import { getName } from '../compiler-utils';
 import { equalObjectLiteralExpression } from '../equal';
 import * as dtsDB from '../dts-db';
 import { safeGenObjDTS } from '../gen-dts';
+import { parse } from '../utils';
+import { getStatements, getDeclarations } from '../query';
+import { typeofVariableStatement } from '../typeof';
 
-export default function render(json: string, name: string) {
-  const sourceCode = `const ${name} = ${json}`;
-  const ast = tsquery.ast(sourceCode);
+export default function render(json: string, name?: string) {
+  const sourceCode = name === undefined ? json : `const ${name} = ${json}`;
+  const ast = parse(sourceCode);
 
-  tsquery(ast, 'VariableDeclaration').forEach((node: ts.Node) => {
-    const nameNode = getIdentifier(node);
-    const valueNode = getExpression(node);
+  getStatements(ast).forEach((node: ts.VariableStatement) => {
+    typeofVariableStatement(node);
+    // getDeclarations(node).forEach((nameNode) => {
+    //   const valueNode = nameNode.initializer;
 
-    if (equalObjectLiteralExpression(valueNode)) {
-      safeGenObjDTS(valueNode, getName(nameNode));
-    }
+    //   if (valueNode && equalObjectLiteralExpression(valueNode)) {
+    //     safeGenObjDTS(valueNode, getName(nameNode));
+    //   }
+    // });
   });
 
-  return dtsDB.emit();
+  // return dtsDB.emit();
 }

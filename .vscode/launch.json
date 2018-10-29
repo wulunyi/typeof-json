@@ -5,6 +5,7 @@
     "type": "node",
     "request": "launch",
     "runtimeArgs": [
+      "--nolazy",
       "-r",
       "ts-node/register"
     ],
@@ -12,8 +13,11 @@
     "args": [
       "-r",
       "tsconfig-paths/register",
-      "${workspaceRoot}/index.ts",
+      "${workspaceRoot}/__test__/transform.test.ts",
     ],
+    "env": {
+      "TS_NODE_FILES": true
+    },
     "cwd": "${workspaceRoot}",
     "protocol": "inspector"
   }]

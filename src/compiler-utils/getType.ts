@@ -21,6 +21,8 @@ export default function getType(node: ts.Node): string {
       result = 'boolean';
       break;
     case ts.SyntaxKind.ArrayLiteralExpression:
+      result = 'array';
+      break;
     case ts.SyntaxKind.ObjectLiteralExpression:
       result = 'object';
       break;
